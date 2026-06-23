@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent:#7c3aed;
+  --accent2:#6366f1;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --bg:#f9fafb;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  position:sticky;
+  top:0;
+  background:white;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.btn{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:white;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(124,58,237,0.3);
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 8%;
+  gap:40px;
+}
+
+.hero-text{
+  max-width:550px;
+  margin-left:80px;
+}
+
+.hero-text h2{
+  font-weight:400;
+  margin-bottom:10px;
+}
+
+.hero-text h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero-text span{
+  color:var(--accent);
+}
+
+.hero-text p{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+.hero-img{
+  padding-top:100px;
+  margin-right:80px;
+}
+
+.hero-img img{
+  width:450px;
+  border-radius:20px;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 8%;
+}
+
+.section-title{
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+/* CARD STYLE */
+.card{
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* RESUME - 2 PER ROW */
+.resume-cards{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+}
+
+/* SKILLS - 1 PER ROW */
+.skills-cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+/* EXPERIENCE - 3 PER ROW */
+.experience-cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+
+/* EDUCATION - 1 PER ROW */
+.education-cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+/* ACADEMIC RECORDS - 2 PER ROW */
+.academic-cards{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+}
+
+/* RESUME BUTTON */
+.resume-btn{
+  margin-left:12px;
+  padding:6px 12px;
+  font-size:14px;
+  font-weight:500;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#7c3aed,#6366f1);
+  border-radius:6px;
+  transition:all 0.2s ease;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.resume-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(124,58,237,0.3);
+}
+
+/* TAGS */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tag{
+  background:#eef2ff;
+  color:var(--accent);
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+/* IMAGES */
+.card img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
+
+/* TABLET */
+@media (max-width:1024px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text{
+    margin-left:0;
+  }
+
+  .hero-img{
+    padding-top:0;
+    margin-right:0;
+  }
+
+  .hero-img img{
+    width:300px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  nav ul{
+    gap:20px;
+  }
+
+  .experience-cards{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  nav{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .btn{
+    margin-top:10px;
+  }
+
+  .hero{
+    padding:50px 6%;
+  }
+
+  .hero-text{
+    margin-left:0;
+  }
+
+  .hero-text h1{
+    font-size:32px;
+  }
+
+  .hero-text h2{
+    font-size:18px;
+  }
+
+  .hero-text p{
+    font-size:14px;
+  }
+
+  .hero-img{
+    padding-top:0;
+    margin-right:0;
+  }
+
+  .hero-img img{
+    width:250px;
+  }
+
+  section{
+    padding:60px 6%;
+  }
+
+  .section-title{
+    font-size:24px;
+    text-align:center;
+  }
+
+  .resume-cards,
+  .skills-cards,
+  .experience-cards,
+  .education-cards,
+  .academic-cards{
+    grid-template-columns:1fr;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width:480px){
+  .hero-text h1{
+    font-size:26px;
+  }
+
+  .hero-img img{
+    width:200px;
+  }
+
+  .btn{
+    padding:8px 14px;
+    font-size:12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#education-images">Academic Records</a></li>
+  </ul>
+
+  <a href="mailto:noahcherubini408@gmail.com" class="btn">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h2>Hi, I'm Noah</h2>
+    <h1>Computer<span> Technician</span></h1>
+    <p>
+      Strong knowledge of computer hardware, software, troubleshooting, and technical support. 
+      Experienced with PC systems. Passionate about solving technical problems, building efficient systems, 
+      and continuously improving my skills.
+    </p>
+  </div>
+
+  <div class="hero-img">
+    <img src="hero-img.png" alt="profile">
+  </div>
+</div>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="section-header">
+    <h2 class="section-title">
+      Resume
+      <span>
+        <a href="Noah Cherubini Resume Best Buy.docx" download class="resume-btn">
+          Download Resume PDF
+        </a>
+      </span>
+    </h2>
+  </div>
+
+  <div class="resume-cards">
+
+    <div class="card">
+      <h3>Technical Skills</h3>
+      <div class="tags">
+        <span class="tag">PC Hardware</span>
+        <span class="tag">Hardware Troubleshooting</span>
+        <span class="tag">Software Installation</span>
+        <span class="tag">Networking</span>
+        <span class="tag">System Maintenance</span>
+        <span class="tag">Technical Support</span>
+        <span class="tag">Device Configuration</span>
+        <span class="tag">Diagnostics</span>
+        <span class="tag">SCRUM</span>
+        <span class="tag">IT Support</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Highlights</h3>
+      <p>
+        3+ years in diagnosing computer issues, setting up systems, installing software,
+        maintaining Windows PCs, resolving technical problems, and helping users with
+        clear, practical support.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <h2 class="section-title">Skills</h2>
+  </div>
+
+  <div class="skills-cards">
+    <div class="card">
+      <h3>More About Me</h3>
+      <p>
+        I provide clear customer support by listening to people’s questions, understanding what they need, and helping them in a professional way.
+        <br><br>
+        I use problem-solving skills to handle daily issues, find practical solutions, and complete tasks without slowing down the work environment.
+        <br><br>
+        I follow procedures carefully and pay close attention to detail to make sure tasks are completed correctly, safely, and consistently.
+        <br><br>
+        I stay organized and remain focused while working under pressure, especially in busy environments where tasks need to be completed on time.
+        <br><br>
+        I work well with team members by communicating clearly, helping when needed, and supporting daily operations so everything runs smoothly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="experience-cards">
+
+    <div class="card">
+      <h3>Attention to Detail</h3>
+      <p>
+        Stayed focused on accuracy, organization, and completing tasks correctly the first time.
+        Built strong habits in troubleshooting, problem-solving, documentation, and careful task management that transfer well into computer tech.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Teamwork</h3>
+      <p>
+        Worked with team members to complete tasks efficiently, communicate clearly, and support a smooth work environment.
+        Stayed dependable under pressure and helped the team stay organized during busy periods.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Quality Control</h3>
+      <p>
+        Followed workplace procedures to maintain consistent standards, accuracy, and reliable results.
+        Reviewed tasks carefully, identified issues early, and corrected problems before they affected daily operations.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Task Management</h3>
+      <p>
+        Managed multiple responsibilities, stayed organized, and completed tasks based on priority and urgency.
+        Built strong time management skills by working under pressure, adapting to changing needs, and keeping daily work on track.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Problem Solving</h3>
+      <p>
+        Identified issues quickly, stayed calm under pressure, and used practical steps to find effective solutions.
+        Built strong troubleshooting habits by analyzing problems, following procedures, and improving how tasks were completed.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Safety</h3>
+      <p>
+        Followed safety procedures, handled responsibilities carefully, and stayed aware of risks in the work environment.
+        Developed safe work habits that connect well to computer tech, including protecting equipment, following proper steps, and preventing avoidable mistakes.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="education-cards">
+    <div class="card">
+      <h3>Computer System Technician Diploma</h3>
+      <p><strong>Sheridan College</strong> (2026)</p>
+      <br>
+      <p>
+        Focused on computer hardware, software support, networking, system maintenance, and technical troubleshooting.
+        Experienced with PC setup, diagnostics, operating systems, device configuration, and customer-focused IT support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION IMAGES -->
+<section id="education-images">
+  <h2 class="section-title">Academic Records</h2>
+
+  <div class="academic-cards">
+
+    <div class="card">
+      <img src="diploma_placeholder_blue.png" alt="Diploma">
+    </div>
+
+    <div class="card">
+      <img src="transcript_placeholder.png" alt="Transcript">
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Portfolio
+</footer>
+
+</body>
+</html>
